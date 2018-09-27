@@ -1,0 +1,33 @@
+version: "3"
+services:
+    neo4j:
+        image: neo4j:3.4.1
+        deploy:
+            replicas: 1
+        ports:
+            - "7677:7474"
+            - "7690:7687"
+        volumes:
+            - /opt/syscat/data:/data
+            - /opt/syscat/logs:/logs
+        networks:
+            - syscatnet
+        environment:
+            NEO4J_AUTH: "neo4j/wallaby"
+    syscat:
+        image: equill/mytaxsys:0.1.0a4
+        deploy:
+            replicas: 1
+        ports:
+            - "4955:4949"
+        networks:
+            - syscatnet
+        environment:
+            LISTEN_ADDR: "0.0.0.0"
+            LISTEN_PORT: 4949
+            NEO4J_HOSTNAME: "neo4j"
+            NEO4J_PORT: 7474
+            NEO4J_USER: "neo4j"
+            NEO4J_PASSWORD: "wallaby"
+networks:
+    mytaxsysnet:

@@ -1,0 +1,41 @@
+name: tasks
+version: 1
+
+resourcetypes:
+    tasks:
+        notes: "Tasks - the unit of work. Includes projects implicitly: a task with subtasks is a project, so there's no need to explicitly change resources from one type to another."
+        attributes:
+            status: "GtD-style status: idea, active, waiting, scheduled, done, cancelled."
+            scheduled: A date/time
+            description: More details about the task
+    pursuits:
+        notes: "Ongoing pursuits under which tasks might be grouped, e.g. Yoga, software development or rock-climbing."
+        attributes:
+            description: Added notes/thoughts about it.
+
+relationships:
+- uri: /people/Created/tasks
+  cardinality: many:1
+- uri: /people/Assigned/tasks
+  cardinality: many:1
+- uri: /tasks/DependsOn/tasks
+  cardinality: many:many
+  notes: "Describes dependencies between tasks, i.e. this can't be started until that is complete."
+- uri: /tasks/Subtasks/tasks
+  cardinality: many:many
+  notes: "For breaking up larger tasks into one or more smaller ones. A task with subtasks is implicitly a project."
+- uri: /tasks/ImplementedAs/tasks
+  cardinality: many:many
+  notes: "For distinguishing a functional spec/customer request from the details of how it's to be actually done."
+- uri: /tasks/RelateTo/pursuits
+  cardinality: many:many
+  notes: Grouping/summarising tasks under pursuits
+- uri: /tasks/Location/groups
+  cardinality: many:many
+  notes: "When a task can be carried out at any of several locations, it can be connected to a group of them."
+- uri: /tasks/Location/places
+  cardinality: many:many
+- uri: /tasks/Location/countries
+  cardinality: many:many
+- uri: /tasks/Location/cities
+  cardinality: many:many
