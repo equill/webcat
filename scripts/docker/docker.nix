@@ -25,7 +25,7 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/mytaxsys";
-    tag = "0.1.0a4";
+    tag = "0.1.0a5";
 
     contents = mytaxsys_deriv;
 

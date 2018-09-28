@@ -5,23 +5,20 @@ services:
         deploy:
             replicas: 1
         ports:
-            - "7677:7474"
-            - "7690:7687"
-        volumes:
-            - /opt/syscat/data:/data
-            - /opt/syscat/logs:/logs
+            - "7678:7474"
+            - "7691:7687"
         networks:
-            - syscatnet
+            - mytaxsysnetdev
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
-    syscat:
-        image: equill/mytaxsys:0.1.0a4
+    restagraph:
+        image: equill/mytaxsys:0.1.0a5
         deploy:
             replicas: 1
         ports:
-            - "4955:4949"
+            - "4956:4949"
         networks:
-            - syscatnet
+            - mytaxsysnetdev
         environment:
             LISTEN_ADDR: "0.0.0.0"
             LISTEN_PORT: 4949
@@ -30,4 +27,4 @@ services:
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
 networks:
-    mytaxsysnet:
+    mytaxsysnetdev:

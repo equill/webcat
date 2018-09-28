@@ -17,8 +17,8 @@ resourcetypes:
     dependent: 'true'
   people:
     attributes:
-      given_name:
-      surname:
+      full_name:
+      preferred_name:
     notes: UID should be their login name or some other compact reference
   phoneNumbers:
     attributes:
@@ -89,3 +89,11 @@ relationships:
 - url: /people/Address/thisShouldFail
 - uri: /people/Address/thisShouldFailAsWell
 - uri: /thisTooShouldFail/Address/streetNumbers
+- uri: /people/Has/any
+  cardinality: many:many
+- uri: /people/Wants/any
+  cardinality: many:many
+- uri: /people/Likes/any
+  cardinality: many:many
+- uri: /people/Dislikes/any
+  cardinality: many:many
