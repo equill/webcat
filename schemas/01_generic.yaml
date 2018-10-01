@@ -1,5 +1,5 @@
 name: meta
-version: 1
+version: 2
 
 resourcetypes:
   any:
@@ -12,5 +12,5 @@ resourcetypes:
 relationships:
 - uri: /any/Tag/tags
   cardinality: many:many
-- uri: /any/Group/groups
+- uri: /any/Member/groups
   cardinality: many:many

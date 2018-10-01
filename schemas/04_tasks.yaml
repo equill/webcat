@@ -1,5 +1,5 @@
 name: tasks
-version: 1
+version: 2
 
 resourcetypes:
     tasks:
@@ -38,4 +38,8 @@ relationships:
 - uri: /tasks/Location/countries
   cardinality: many:many
 - uri: /tasks/Location/cities
+  cardinality: many:many
+- uri: /tasks/Location/groups
+  cardinality: many:many
+- uri: /tasks/Requester/people
   cardinality: many:many

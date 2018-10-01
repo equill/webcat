@@ -1,5 +1,5 @@
 name: people_and_places
-version: 1
+version: 2
 
 resourcetypes:
   places:
@@ -38,6 +38,11 @@ resourcetypes:
     notes: The UID is the street number
   streets:
     dependent: 'true'
+  website:
+    dependent: 'false'
+    attributes:
+      url:
+      comments:
 
 relationships:
 - cardinality: 1:many
@@ -96,4 +101,8 @@ relationships:
 - uri: /people/Likes/any
   cardinality: many:many
 - uri: /people/Dislikes/any
+  cardinality: many:many
+- uri: /people/Visited/places
+  cardinality: many:many
+- uri: /people/WantToVisit/places
   cardinality: many:many

@@ -1,5 +1,5 @@
 name: organisations
-version: 1
+version: 3
 
 resourcetypes:
   brands:
@@ -9,6 +9,14 @@ resourcetypes:
         description: Comments about this particular brand.
   models:
     dependent: 'true'
+    attributes:
+      comments:
+        description: Comments about this particular model.
+  modelversions:
+    dependent: true'
+    attributes:
+      comments:
+        description: Comments about this particular model version.
   organisations:
     attributes:
       comments:
@@ -20,6 +28,12 @@ relationships:
   uri: /brands/Produces/models
 - cardinality: many:many
   uri: /models/CompatibleWith/models
+- uri: /models/Versions/modelVersions
+  cardinality: 1:many
+- uri: /modelVersions/CompatibleWith/modelVersions
+  cardinality: many:many
+- uri: /modelVersions/CompatibleWith/models
+  cardinality: many:many
 - cardinality: many:1
   uri: /brands/Vendor/organisations
 - cardinality: many:1
@@ -29,3 +43,12 @@ relationships:
 - cardinality: 1:many
   dependent: 'true'
   uri: /organisations/ContactMethod/emailAddresses
+- uri: /organisations/Websites/websites
+  cardinality: 1:many
+  dependent: 'false'
+- uri: /models/Location/websites
+  cardinality: many:many
+  dependent: 'false'
+- uri: /models/Location/group
+  cardinality: many:many
+  dependent: 'false'
