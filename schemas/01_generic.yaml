@@ -1,5 +1,5 @@
 name: meta
-version: 2
+version: 3
 
 resourcetypes:
   any:
@@ -10,7 +10,7 @@ resourcetypes:
     notes: For grouping things.
 
 relationships:
-- uri: /any/Tag/tags
+- uri: /any/Tags/tags
   cardinality: many:many
 - uri: /any/Member/groups
   cardinality: many:many
