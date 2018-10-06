@@ -1,22 +1,33 @@
 name: tasks
-version: 2
+version: 3
 
 resourcetypes:
-    tasks:
-        notes: "Tasks - the unit of work. Includes projects implicitly: a task with subtasks is a project, so there's no need to explicitly change resources from one type to another."
-        attributes:
-            status: "GtD-style status: idea, active, waiting, scheduled, done, cancelled."
-            scheduled: A date/time
-            description: More details about the task
-    pursuits:
-        notes: "Ongoing pursuits under which tasks might be grouped, e.g. Yoga, software development or rock-climbing."
-        attributes:
-            description: Added notes/thoughts about it.
+  tasks:
+    notes: "Tasks - the unit of work. Includes projects implicitly; a task with subtasks is a project, so there's no need to explicitly change resources from one type to another."
+    attributes:
+      status:
+        description: "GtD-style status: idea, active, waiting, scheduled, done, cancelled."
+      scheduled:
+        description: "A date/time."
+      description:
+        description: More details about the task.
+      deadline:
+        description: When the task should be done by.
+      scale:
+        description: How big the job appears to be.
+      importance:
+        description: How important it is that it's done.
+      urgency:
+        description: How soon it needs to be done.
+  pursuits:
+    notes: "Ongoing pursuits under which tasks might be grouped, e.g. Yoga, software development or rock-climbing."
+    attributes:
+      description:
 
 relationships:
-- uri: /people/Created/tasks
+- uri: /tasks/Created/people
   cardinality: many:1
-- uri: /people/Assigned/tasks
+- uri: /tasks/Assigned/people
   cardinality: many:1
 - uri: /tasks/DependsOn/tasks
   cardinality: many:many
@@ -27,19 +38,19 @@ relationships:
 - uri: /tasks/ImplementedAs/tasks
   cardinality: many:many
   notes: "For distinguishing a functional spec/customer request from the details of how it's to be actually done."
-- uri: /tasks/RelateTo/pursuits
+- uri: /tasks/RelatesTo/pursuits
   cardinality: many:many
   notes: Grouping/summarising tasks under pursuits
-- uri: /tasks/Location/groups
+- uri: /tasks/Locations/groups
   cardinality: many:many
   notes: "When a task can be carried out at any of several locations, it can be connected to a group of them."
-- uri: /tasks/Location/places
+- uri: /tasks/Locations/places
   cardinality: many:many
-- uri: /tasks/Location/countries
+- uri: /tasks/Locations/countries
   cardinality: many:many
-- uri: /tasks/Location/cities
+- uri: /tasks/Locations/cities
   cardinality: many:many
-- uri: /tasks/Location/groups
+- uri: /tasks/Locations/groups
   cardinality: many:many
 - uri: /tasks/Requester/people
   cardinality: many:many
