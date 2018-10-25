@@ -1,5 +1,5 @@
 name: organisations
-version: 3
+version: 5
 
 resourcetypes:
   brands:
@@ -49,6 +49,15 @@ relationships:
 - uri: /models/Location/websites
   cardinality: many:many
   dependent: 'false'
-- uri: /models/Location/group
+- uri: /models/Location/groups
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Wants/groups
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Wants/models
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Owns/models
   cardinality: many:many
   dependent: 'false'
