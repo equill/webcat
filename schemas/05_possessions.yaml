@@ -1,5 +1,5 @@
 name: possessions
-version: 2
+version: 3
 
 resourcetypes:
     things:
@@ -24,25 +24,23 @@ resourcetypes:
 relationships:
 - uri: /people/Wants/groups
   cardinality: many:many
-  dependent: 'false'
 - uri: /people/Wants/models
   cardinality: many:many
-  dependent: 'false'
+- uri: /people/Wants/modelVersions
+  cardinality: many:many
 - uri: /people/Owns/models
   cardinality: many:many
-  dependent: 'false'
 - uri: /people/Owns/things
   cardinality: many:many
-  dependent: 'false'
-- uri: /models/Instances/things
+- uri: /things/Model/models
   cardinality: 1:many
-  dependent: 'false'
+- uri: /things/Model/modelVersions
+  cardinality: 1:many
 - uri: /models/Website/url
   cardinality: many:many
-  dependent: 'false'
 - uri: /things/PurchasedFrom/url
   cardinality: many:1
-  dependent: 'false'
 - uri: /things/Installed/things
   cardinality: many:1
-  dependent: 'false'
+- uri: /things/Owner/people
+  cardinality: many:1
