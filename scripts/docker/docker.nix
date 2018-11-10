@@ -1,14 +1,14 @@
 with import <nixpkgs> {};
 
 let
-    mytaxsys_deriv = stdenv.mkDerivation rec {
-        name = "mytaxsys";
+    sebcat_deriv = stdenv.mkDerivation rec {
+        name = "sebcat";
         builder = "${bash}/bin/bash";
         args = [ ./nix-builder.sh ];
         inherit coreutils openssl libyaml;
         system = builtins.currentSystem;
         schemapath = ../../schemas;
-        mytaxsyspath = ./mytaxsys;
+        sebcatpath = ./sebcat;
     };
 
     ld_path = stdenv.lib.makeLibraryPath [
@@ -24,13 +24,13 @@ let
 
 in
 pkgs.dockerTools.buildImage {
-    name = "equill/mytaxsys";
-    tag = "0.1.6";
+    name = "equill/sebcat";
+    tag = "0.1.7a4";
 
-    contents = mytaxsys_deriv;
+    contents = sebcat_deriv;
 
     config = {
-        Cmd = [ "mytaxsys" ];
+        Cmd = [ "sebcat" ];
         Entrypoint = [ entrypoint ];
         ExposedPorts = {
             "4949/tcp" = {};

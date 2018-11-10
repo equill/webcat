@@ -8,13 +8,13 @@ services:
             - "7677:7474"
             - "7690:7687"
         volumes:
-            - /opt/mytaxsys/data:/data
+            - /home/james/data/sebcat/data:/data
         networks:
-            - mytaxsysnet
+            - sebcatnet
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/mytaxsys:0.1.6
+        image: equill/sebcat:0.1.7a4
         depends_on:
             - neo4j
         deploy:
@@ -22,7 +22,7 @@ services:
         ports:
             - "4955:4949"
         networks:
-            - mytaxsysnet
+            - sebcatnet
         environment:
             LISTEN_ADDR: "0.0.0.0"
             LISTEN_PORT: 4949
@@ -31,4 +31,4 @@ services:
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
 networks:
-    mytaxsysnet:
+    sebcatnet:

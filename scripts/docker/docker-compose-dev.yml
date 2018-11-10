@@ -8,17 +8,17 @@ services:
             - "7678:7474"
             - "7691:7687"
         networks:
-            - mytaxsysnetdev
+            - sebcatnetdev
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/mytaxsys:0.1.4
+        image: equill/sebcat:0.1.4
         deploy:
             replicas: 1
         ports:
             - "4956:4949"
         networks:
-            - mytaxsysnetdev
+            - sebcatnetdev
         environment:
             LISTEN_ADDR: "0.0.0.0"
             LISTEN_PORT: 4949
@@ -27,4 +27,4 @@ services:
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
 networks:
-    mytaxsysnetdev:
+    sebcatnetdev:
