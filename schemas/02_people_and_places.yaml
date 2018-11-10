@@ -1,5 +1,5 @@
 name: people_and_places
-version: 2
+version: 3
 
 resourcetypes:
   places:
@@ -12,7 +12,7 @@ resourcetypes:
     notes: The geographic kind.
   emailAddresses:
     attributes:
-      comments:
+      description:
         description: Comments about this particular email address.
     dependent: 'true'
   people:
@@ -22,7 +22,7 @@ resourcetypes:
     notes: UID should be their login name or some other compact reference
   phoneNumbers:
     attributes:
-      comments:
+      description:
   postboxAddresses:
     notes: The UID is the PO Box number.
   postcodes:
@@ -42,7 +42,7 @@ resourcetypes:
     dependent: 'false'
     attributes:
       url:
-      comments:
+      description:
 
 relationships:
 - cardinality: 1:many

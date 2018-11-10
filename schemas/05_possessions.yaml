@@ -1,0 +1,48 @@
+name: possessions
+version: 2
+
+resourcetypes:
+    things:
+        notes: "Any instance of a, well, thing."
+        dependent: "false"
+        attributes:
+            serialnumber:
+            description:
+            assetnumber:
+            colour:
+            name:
+            type:
+            purchaseprice:
+            purchasedate:
+    url:
+        dependent: "false"
+        attributes:
+            url:
+            text:
+            description:
+
+relationships:
+- uri: /people/Wants/groups
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Wants/models
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Owns/models
+  cardinality: many:many
+  dependent: 'false'
+- uri: /people/Owns/things
+  cardinality: many:many
+  dependent: 'false'
+- uri: /models/Instances/things
+  cardinality: 1:many
+  dependent: 'false'
+- uri: /models/Website/url
+  cardinality: many:many
+  dependent: 'false'
+- uri: /things/PurchasedFrom/url
+  cardinality: many:1
+  dependent: 'false'
+- uri: /things/Installed/things
+  cardinality: many:1
+  dependent: 'false'

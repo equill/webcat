@@ -1,25 +1,25 @@
 name: organisations
-version: 5
+version: 6
 
 resourcetypes:
   brands:
     notes: "Also known as ´make´."
     attributes:
-      comments:
+      description:
         description: Comments about this particular brand.
   models:
     dependent: 'true'
     attributes:
-      comments:
+      description:
         description: Comments about this particular model.
   modelversions:
     dependent: true'
     attributes:
-      comments:
+      description:
         description: Comments about this particular model version.
   organisations:
     attributes:
-      comments:
+      description:
     notes: 'Any kind of organisation: professional, social or other.'
 
 relationships:
@@ -50,14 +50,5 @@ relationships:
   cardinality: many:many
   dependent: 'false'
 - uri: /models/Location/groups
-  cardinality: many:many
-  dependent: 'false'
-- uri: /people/Wants/groups
-  cardinality: many:many
-  dependent: 'false'
-- uri: /people/Wants/models
-  cardinality: many:many
-  dependent: 'false'
-- uri: /people/Owns/models
   cardinality: many:many
   dependent: 'false'
