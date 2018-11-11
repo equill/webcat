@@ -1,5 +1,5 @@
 name: tasks
-version: 3
+version: 4
 
 resourcetypes:
   tasks:
@@ -41,6 +41,8 @@ relationships:
 - uri: /tasks/RelatesTo/pursuits
   cardinality: many:many
   notes: Grouping/summarising tasks under pursuits
+- uri: /pursuits/RelatesTo/pursuits
+  cardinality: many:many
 - uri: /tasks/Locations/groups
   cardinality: many:many
   notes: "When a task can be carried out at any of several locations, it can be connected to a group of them."
