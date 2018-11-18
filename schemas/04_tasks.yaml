@@ -1,5 +1,5 @@
 name: tasks
-version: 4
+version: 5
 
 resourcetypes:
   tasks:
@@ -55,4 +55,6 @@ relationships:
 - uri: /tasks/Locations/groups
   cardinality: many:many
 - uri: /tasks/Requester/people
+  cardinality: many:many
+- uri: /people/Pursuits/pursuits
   cardinality: many:many
