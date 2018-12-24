@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
         paths = buildInputs;
     };
 
-    shellHook = "export PS1='\n[nix-shell sebcat]: '";
+    shellHook = "export PS1='\n\\[\\033[01;32m\\][nix sebcat] \\w\\$\\[\\033[00m\\] '";
 
     LD_LIBRARY_PATH = stdenv.lib.makeLibraryPath [
         pkgs.openssl
