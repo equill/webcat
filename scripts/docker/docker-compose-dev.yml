@@ -12,7 +12,7 @@ services:
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.1.4
+        image: equill/sebcat:0.1.5
         deploy:
             replicas: 1
         ports:

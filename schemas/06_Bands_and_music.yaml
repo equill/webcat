@@ -1,0 +1,78 @@
+name: music
+version: 5
+
+resourcetypes:
+  bands:
+    attributes:
+      description:
+  songs:
+    attributes:
+      description:
+  albums:
+    attributes:
+      description:
+  recordings:
+    attributes:
+      description:
+      date:
+      format:
+  genres:
+    attributes:
+      description:
+  gigs:
+    attributes:
+      description:
+      date:
+
+relationships:
+- uri: /people/Members/bands
+  cardinality: many:many
+- uri: /bands/Plays/songs
+  cardinality: many:many
+- uri: /people/Plays/songs
+  cardinality: many:many
+- uri: /bands/Proposed/songs
+  cardinality: many:many
+  notes: "Songs proposed for the band's playlist"
+- uri: /bands/Proposed/gigs
+  cardinality: many:many
+- uri: /songs/Recordings/recordings
+  cardinality: 1:many
+- uri: /bands/Albums/albums
+  cardinality: many:many
+- uri: /people/Albums/albums
+  cardinality: many:many
+- uri: /albums/Songs/songs
+  cardinality: many:many
+- uri: /songs/Recordings/recordings
+  cardinality: 1:many
+- uri: /albums/Recordings/recordings
+  cardinality: 1:many
+- uri: /people/Wants/albums
+  cardinality: many:many
+- uri: /people/Wants/songs
+  cardinality: many:many
+- uri: /people/Wants/recordings
+  cardinality: many:many
+- uri: /people/Owns/recordings
+  cardinality: many:many
+- uri: /bands/Genres/genres
+  cardinality: many:many
+- uri: /people/Genres/genres
+  cardinality: many:many
+- uri: /songs/Genres/genres
+  cardinality: many:many
+- uri: /albums/Genres/genres
+  cardinality: many:many
+- uri: /bands/Gigs/gigs
+  cardinality: many:many
+- uri: /people/Gigs/gigs
+  cardinality: many:many
+- uri: /people/Attended/gigs
+  cardinality: many:many
+- uri: /gigs/Locations/places
+  cardinality: many:1
+- uri: /bands/RelatesTo/pursuits
+  cardinality: many:many
+- uri: /tasks/RelatesTo/bands
+  cardinality: many:many
