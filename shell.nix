@@ -25,6 +25,8 @@ stdenv.mkDerivation rec {
         paths = buildInputs;
     };
 
+    shellHook = "export PS1='\n[nix-shell sebcat]: '";
+
     LD_LIBRARY_PATH = stdenv.lib.makeLibraryPath [
         pkgs.openssl
         pkgs.libyaml
