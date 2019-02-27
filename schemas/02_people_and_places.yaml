@@ -1,10 +1,12 @@
 name: people_and_places
-version: 3
+version: 4
 
 resourcetypes:
   places:
     dependent: 'false'
     notes: The generic idea of a specific place, independent of its geographical location. E.g, an office or somebody's home.
+    attributes:
+      description:
   cities:
     dependent: 'true'
     notes: The geographic kind.

@@ -32,6 +32,8 @@ relationships:
   cardinality: many:many
 - uri: /people/Owns/things
   cardinality: many:many
+- uri: /people/Wants/things
+  cardinality: many:many
 - uri: /things/Model/models
   cardinality: 1:many
 - uri: /things/Model/modelVersions
