@@ -1,5 +1,5 @@
 name: organisations
-version: 8
+version: 9
 
 resourcetypes:
   organisations:
@@ -51,5 +51,11 @@ relationships:
   cardinality: many:many
   dependent: 'false'
 - uri: /models/Location/groups
+  cardinality: many:many
+  dependent: 'false'
+- uri: /models/Installed/things
+  cardinality: many:many
+  dependent: 'false'
+- uri: /modelVersions/Installed/things
   cardinality: many:many
   dependent: 'false'
