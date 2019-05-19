@@ -9,15 +9,14 @@ stdenv.mkDerivation rec {
         # Neo4j
         pkgs.neo4j
         # Lisp env
-        pkgs.gcc_multi
         pkgs.gcc
         pkgs.libyaml
         pkgs.openssl
         pkgs.sbcl
         # Python env
-        pkgs.python36Packages.requests
-        pkgs.python36Packages.pylint
         pkgs.python3
+        pkgs.python37Packages.requests
+        pkgs.python37Packages.pylint
     ];
 
     env = buildEnv {
