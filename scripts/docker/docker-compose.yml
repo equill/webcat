@@ -1,7 +1,7 @@
 version: "3"
 services:
     neo4j:
-        image: neo4j:3.4.1
+        image: neo4j:3.5.3
         deploy:
             replicas: 1
         ports:
