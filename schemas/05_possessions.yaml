@@ -22,17 +22,9 @@ resourcetypes:
             description:
 
 relationships:
-- uri: /people/Wants/groups
-  cardinality: many:many
-- uri: /people/Wants/models
-  cardinality: many:many
-- uri: /people/Wants/modelVersions
-  cardinality: many:many
 - uri: /people/Owns/models
   cardinality: many:many
 - uri: /people/Owns/things
-  cardinality: many:many
-- uri: /people/Wants/things
   cardinality: many:many
 - uri: /things/Model/models
   cardinality: 1:many
