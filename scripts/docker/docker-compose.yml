@@ -1,7 +1,7 @@
 version: "3"
 services:
     neo4j:
-        image: neo4j:3.5.3
+        image: equill/neo4j-graphql:0.0.1
         deploy:
             replicas: 1
         ports:
@@ -14,7 +14,7 @@ services:
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.1.9a1
+        image: equill/sebcat:0.2.2
         depends_on:
             - neo4j
         deploy:
