@@ -1,7 +1,7 @@
 version: "3"
 services:
     neo4j:
-        image: equill/neo4j-graphql:0.0.1
+        image: neo4j:4.1.0
         deploy:
             replicas: 1
         ports:
@@ -12,9 +12,10 @@ services:
         networks:
             - sebcatnet
         environment:
+            NEO4J_dbms_allow__upgrade: "true"
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.2.2
+        image: equill/sebcat:0.2.4
         depends_on:
             - neo4j
         deploy:
@@ -27,24 +28,25 @@ services:
             LISTEN_ADDR: "0.0.0.0"
             LISTEN_PORT: 4949
             NEO4J_HOSTNAME: "neo4j"
+            NEO4J_DBNAME: "graph.db"
             NEO4J_PORT: 7474
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
-    rg-graphql:
-        image: equill/rg-graphql:0.0.1
-        depends_on:
-            - neo4j
-            - restagraph
-        deploy:
-            replicas: 1
-        ports:
-            - "4000:4000"
-        networks:
-            - sebcatnet
-        environment:
-            NEO4J_SERVER: "neo4j:7687"
-            NEO4J_USER: "neo4j"
-            NEO4J_PASSWD: "wallaby"
-            RG_SERVER: "http://restagraph:4949"
+#    rg-graphql:
+#        image: equill/rg-graphql:0.0.2a4
+#        depends_on:
+#            - neo4j
+#            - restagraph
+#        deploy:
+#            replicas: 1
+#        ports:
+#            - "4000:4000"
+#        networks:
+#            - sebcatnet
+#        environment:
+#            NEO4J_SERVER: "neo4j:7687"
+#            NEO4J_USER: "neo4j"
+#            NEO4J_PASSWD: "wallaby"
+#            RG_SERVER: "http://restagraph:4949"
 networks:
     sebcatnet:
