@@ -12,7 +12,6 @@ services:
         networks:
             - sebcatnet
         environment:
-            NEO4J_dbms_allow__upgrade: "true"
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
         image: equill/sebcat:0.2.4
