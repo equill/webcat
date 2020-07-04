@@ -14,7 +14,7 @@ services:
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.2.10
+        image: equill/sebcat:0.2.14
         depends_on:
             - neo4j
         deploy:

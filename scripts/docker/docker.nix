@@ -25,7 +25,7 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.2.10";
+    tag = "0.2.14";
     created = "now";
 
     contents = sebcat_deriv;
