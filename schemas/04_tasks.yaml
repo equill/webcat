@@ -1,12 +1,13 @@
 name: tasks
-version: 8
+version: 10
 
 resourcetypes:
   tasks:
     notes: "Tasks - the unit of work. Includes projects implicitly; a task with subtasks is a project, so there's no need to explicitly change resources from one type to another."
     attributes:
       status:
-        description: "GtD-style status: idea, active, waiting, scheduled, done, cancelled."
+        description: "Task status."
+        vals: "Idea,Active,Cancelled,Tracked_elsewhere"
       scheduled:
         description: "A date/time."
       description:
@@ -15,10 +16,13 @@ resourcetypes:
         description: When the task should be done by.
       scale:
         description: How big the job appears to be.
+        vals: "high,medium,low"
       importance:
         description: How important it is that it's done.
+        vals: "high,medium,low"
       urgency:
         description: How soon it needs to be done.
+        vals: "high,medium,low"
   pursuits:
     notes: "Ongoing pursuits under which tasks might be grouped, e.g. Yoga, software development or rock-climbing."
     attributes:
