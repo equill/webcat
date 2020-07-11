@@ -1,5 +1,5 @@
 name: tasks
-version: 10
+version: 11
 
 resourcetypes:
   tasks:
@@ -7,7 +7,7 @@ resourcetypes:
     attributes:
       status:
         description: "Task status."
-        vals: "Idea,Active,Cancelled,Tracked_elsewhere"
+        vals: "Idea,Active,Cancelled,Done,Tracked_elsewhere"
       scheduled:
         description: "A date/time."
       description:
