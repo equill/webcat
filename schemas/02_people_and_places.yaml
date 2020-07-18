@@ -17,11 +17,6 @@ resourcetypes:
       description:
         description: Comments about this particular email address.
     dependent: 'true'
-  people:
-    attributes:
-      full_name:
-      preferred_name:
-    notes: UID should be their login name or some other compact reference
   phoneNumbers:
     attributes:
       description:
