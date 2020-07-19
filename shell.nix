@@ -4,15 +4,11 @@ stdenv.mkDerivation rec {
     name = "mytaxsys";
 
     buildInputs = [
-        # General utilities
-        pkgs.bash
-        # Neo4j
-        pkgs.neo4j
         # Lisp env
         pkgs.gcc
         pkgs.libyaml
         pkgs.openssl
-        pkgs.sbcl
+        pkgs.sbcl_2_0_2
         # Python env
         pkgs.python3
         pkgs.python37Packages.requests
