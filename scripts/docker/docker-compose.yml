@@ -14,7 +14,7 @@ services:
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.2.16
+        image: equill/sebcat:0.3.0
         depends_on:
             - neo4j
         deploy:
@@ -31,6 +31,8 @@ services:
             NEO4J_PORT: 7474
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
+            FILES_LOCATION: "/tmp/"
+            FILES_TEMP_LOCATION: "/tmp/"
 #    rg-graphql:
 #        image: equill/rg-graphql:0.0.2a4
 #        depends_on:
