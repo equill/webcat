@@ -21,6 +21,8 @@ services:
             replicas: 1
         ports:
             - "4955:4949"
+        volumes:
+          - /home/james/data/sebcat/files:/files
         networks:
             - sebcatnet
         environment:
@@ -31,7 +33,7 @@ services:
             NEO4J_PORT: 7474
             NEO4J_USER: "neo4j"
             NEO4J_PASSWORD: "wallaby"
-            FILES_LOCATION: "/tmp/"
+            FILES_LOCATION: "/files/"
             FILES_TEMP_LOCATION: "/tmp/"
 #    rg-graphql:
 #        image: equill/rg-graphql:0.0.2a4
