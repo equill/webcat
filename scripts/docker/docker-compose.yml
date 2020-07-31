@@ -14,7 +14,7 @@ services:
         environment:
             NEO4J_AUTH: "neo4j/wallaby"
     restagraph:
-        image: equill/sebcat:0.3.0
+        image: equill/sebcat:0.4.0a2
         depends_on:
             - neo4j
         deploy:
@@ -26,13 +26,13 @@ services:
         networks:
             - sebcatnet
         environment:
-            LISTEN_ADDR: "0.0.0.0"
-            LISTEN_PORT: 4949
-            NEO4J_HOSTNAME: "neo4j"
-            NEO4J_DBNAME: "graph.db"
-            NEO4J_PORT: 7474
-            NEO4J_USER: "neo4j"
-            NEO4J_PASSWORD: "wallaby"
+            SYSCAT_LISTEN_ADDR: "0.0.0.0"
+            SYSCAT_LISTEN_PORT: 4949
+            SYSCAT_NEO4J_HOSTNAME: "neo4j"
+            SYSCAT_NEO4J_DBNAME: "graph.db"
+            SYSCAT_NEO4J_PORT: 7474
+            SYSCAT_NEO4J_USER: "neo4j"
+            SYSCAT_NEO4J_PASSWORD: "wallaby"
             FILES_LOCATION: "/files/"
             FILES_TEMP_LOCATION: "/tmp/"
 #    rg-graphql:
