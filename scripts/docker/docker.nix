@@ -9,7 +9,6 @@ let
         system = builtins.currentSystem;
         schemapath = ../../schemas;
         sebcatpath = ./sebcat;
-
     };
 
     ld_path = stdenv.lib.makeLibraryPath [
@@ -26,7 +25,7 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.4.0a2";
+    tag = "0.4.0a3";
     created = "now";
 
     contents = [ sebcat_deriv bash file coreutils which ];
