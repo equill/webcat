@@ -1,0 +1,33 @@
+name: people_and_places
+version: 4
+
+resourcetypes:
+  places:
+    dependent: 'false'
+    notes: The generic idea of a specific place, independent of its geographical location. E.g, an office or somebody's home.
+    attributes:
+      description:
+
+relationships:
+- uri: /places/Locations/streetNumbers
+  cardinality: many:1
+- uri: /places/Locations/streets
+  cardinality: many:1
+- uri: /places/Locations/cities
+  cardinality: many:1
+- uri: /places/Locations/states
+  cardinality: many:1
+- uri: /places/Locations/countries
+  cardinality: many:1
+- uri: /people/Has/any
+  cardinality: many:many
+- uri: /people/Wants/any
+  cardinality: many:many
+- uri: /people/Likes/any
+  cardinality: many:many
+- uri: /people/Dislikes/any
+  cardinality: many:many
+- uri: /people/Visited/places
+  cardinality: many:many
+- uri: /people/WantToVisit/places
+  cardinality: many:many

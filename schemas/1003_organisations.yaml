@@ -1,0 +1,21 @@
+name: organisations
+version: 10
+
+resourcetypes:
+  brands:
+    notes: "Also known as ´make´."
+    attributes:
+      description:
+        description: Comments about this particular brand.
+
+relationships:
+- uri: /brands/Produces/models
+  cardinality: 1:many
+  dependent: 'true'
+- uri: /modelVersions/CompatibleWith/modelVersions
+  cardinality: many:many
+- uri: /brands/Vendor/organisations
+  cardinality: many:1
+- uri: /models/Installed/things
+  cardinality: many:many
+  dependent: 'false'

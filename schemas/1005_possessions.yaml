@@ -14,12 +14,6 @@ resourcetypes:
             type:
             purchaseprice:
             purchasedate:
-    url:
-        dependent: "false"
-        attributes:
-            url:
-            text:
-            description:
 
 relationships:
 - uri: /people/Owns/models
@@ -30,8 +24,6 @@ relationships:
   cardinality: 1:many
 - uri: /things/Model/modelVersions
   cardinality: 1:many
-- uri: /models/Website/url
-  cardinality: many:many
 - uri: /things/PurchasedFrom/url
   cardinality: many:1
 - uri: /things/Installed/things
