@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
 
 stdenv.mkDerivation rec {
-    name = "mytaxsys";
+    name = "sebcat";
 
     buildInputs = [
         # Lisp env
