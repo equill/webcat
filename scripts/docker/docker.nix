@@ -24,7 +24,7 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.4.0a6";
+    tag = "0.4.0a7";
     created = "now";
 
     fromImage = pkgs.dockerTools.pullImage {
