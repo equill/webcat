@@ -1,5 +1,5 @@
 name: organisations
-version: 10
+version: 11
 
 resourcetypes:
   brands:
@@ -16,6 +16,3 @@ relationships:
   cardinality: many:many
 - uri: /brands/Vendor/organisations
   cardinality: many:1
-- uri: /models/Installed/things
-  cardinality: many:many
-  dependent: 'false'

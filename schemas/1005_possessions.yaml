@@ -1,5 +1,5 @@
 name: possessions
-version: 3
+version: 4
 
 resourcetypes:
     things:
@@ -30,3 +30,6 @@ relationships:
   cardinality: many:1
 - uri: /things/Owner/people
   cardinality: many:1
+- uri: /models/Installed/things
+  cardinality: many:many
+  dependent: 'false'
