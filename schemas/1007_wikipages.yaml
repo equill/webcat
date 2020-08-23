@@ -1,5 +1,5 @@
 name: wikipages
-version: 3
+version: 5
 
 resourcetypes:
   wikipages:
@@ -29,4 +29,6 @@ relationships:
   - uri: /journals/Location/countries
     cardinality: many:many
   - uri: /journals/Location/cities
+    cardinality: many:many
+  - uri: /journals/Involves/people
     cardinality: many:many
