@@ -1,0 +1,39 @@
+name: events
+version: 3
+
+resourcetypes:
+  events:
+    notes: Things that happened. Or will happen.
+    attributes:
+      title:
+      description:
+      start:
+        description: Starting date/time.
+      end:
+        description: Ending date/time.
+
+relationships:
+- uri: /events/Location/places
+  cardinality: many:many
+- uri: /wikipages/RelateTo/events
+  cardinality: many:many
+- uri: /journals/RelatesTo/events
+  cardinality: many:many
+- uri: /events/Involves/people
+  cardinality: many:many
+- uri: /people/WantToGoTo/events
+  cardinality: many:many
+- uri: /people/Attended/events
+  cardinality: many:many
+- uri: /tasks/RelatesTo/events
+  cardinality: many:many
+- uri: /bands/Performer/events
+  cardinality: many:many
+- uri: /recordings/RecordedAt/events
+  cardinality: many:1
+- uri: /albums/RecordedAt/events
+  cardinality: many:1
+- uri: /events/Genre/genres
+  cardinality: many:many
+- uri: /wikipages/RelatesTo/events
+  cardinality: many:many

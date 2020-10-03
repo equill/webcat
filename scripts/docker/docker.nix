@@ -24,14 +24,14 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.4.0a19";
+    tag = "0.4.0a25";
     created = "now";
 
     fromImage = pkgs.dockerTools.pullImage {
         imageName = "equill/syscat";
-        finalImageTag = "0.2.0a25";
-        imageDigest = "sha256:792d92ebe45079e78f96382554ba1a9da95e9b27ae3d5bfaf2997463e6be6fa9";
-        sha256 = "15f42hq85zfm86iv58nbv2ryvxx31w7j5qmhm77lc9pywr2k2cja";
+        finalImageTag = "0.2.0a27";
+        imageDigest = "sha256:094383666aaaf174b7d136e617570a44e095b14e7d442dceeb5e3f14c504b0bb";
+        sha256 = "19770533nfgdhb56bvvg099if4jqg4wdswip2wmjrcrvfnx8xhcg";
     };
     contents = [ sebcat_deriv bash file coreutils which ];
 
