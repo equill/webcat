@@ -22,7 +22,7 @@ services:
     ports:
       - "4955:4949"
     volumes:
-      - sebcat_files:/files
+      - /home/james/data/sebcat/files:/files
     networks:
       - sebcatnet
     environment:
