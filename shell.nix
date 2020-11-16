@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
         pkgs.gcc
         pkgs.libyaml
         pkgs.openssl
-        pkgs.sbcl_2_0_2
+        pkgs.sbcl
         # Python env
         pkgs.python3
         pkgs.python37Packages.requests
