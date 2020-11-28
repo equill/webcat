@@ -24,19 +24,19 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.5.0";
+    tag = "0.6.0a1";
     created = "now";
 
     fromImage = pkgs.dockerTools.pullImage {
-        imageName = "equill/syscat";
-        finalImageTag = "0.3.0";
-        imageDigest = "sha256:dde8b97c72ed4f24693eb901d2bb8cee14e156e5d0aa63515bb8f8c32d59979c";
-        sha256 = "0l3zlqawsllmrz8jaka0rja1036nv3m3ypnwhq687k9lki51y4l2";
+        imageName = "equill/restagraph";
+        finalImageTag = "0.6.5a1";
+        imageDigest = "sha256:5d241a1aaa3175601521478e4b6760eefbd347a71b531ef16fb6ed67738adb73";
+        sha256 = "0hfccr8d3dci6w2jphf87q8945p58p1m53m1s13m61sqwx5b7970";
     };
-    contents = [ sebcat_deriv bash file coreutils which ];
+    contents = [ sebcat_deriv bash file coreutils which tcpdump ];
 
     config = {
-        Cmd = [ "syscat" ];
+        Cmd = [ "restagraph" ];
         Entrypoint = [ entrypoint ];
         ExposedPorts = {
             "4949/tcp" = {};
