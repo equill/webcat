@@ -24,16 +24,24 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/sebcat";
-    tag = "0.6.0a1";
+    tag = "0.6.1";
     created = "now";
 
     fromImage = pkgs.dockerTools.pullImage {
         imageName = "equill/restagraph";
-        finalImageTag = "0.6.5a1";
-        imageDigest = "sha256:5d241a1aaa3175601521478e4b6760eefbd347a71b531ef16fb6ed67738adb73";
-        sha256 = "0hfccr8d3dci6w2jphf87q8945p58p1m53m1s13m61sqwx5b7970";
+        finalImageTag = "0.6.6";
+        imageDigest = "sha256:1cd32f8ce1282a9781228b865ea53834e188f10467438b840962f910f0ff1177";
+        sha256 = "01ka2sv7inwl0krzxj65bg78dwiw7pihrbvz9f4q2vi2a9ryrfdb";
     };
-    contents = [ sebcat_deriv bash file coreutils which tcpdump ];
+    contents = [
+        sebcat_deriv
+        bash
+        coreutils
+        file
+        iproute
+        tcpdump
+        which
+    ];
 
     config = {
         Cmd = [ "restagraph" ];
