@@ -33,6 +33,8 @@ relationships:
   cardinality: many:1
 - uri: /tasks/Assigned/people
   cardinality: many:1
+- uri: /tasks/RelatesTo/tasks
+  cardinality: many:many
 - uri: /tasks/DependsOn/tasks
   cardinality: many:many
   notes: "Describes dependencies between tasks, i.e. this can't be started until that is complete."
