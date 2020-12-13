@@ -1,8 +1,8 @@
 with import <nixpkgs> {};
 
 let
-    sebcat_deriv = stdenv.mkDerivation rec {
-        name = "sebcat";
+    webcat_deriv = stdenv.mkDerivation rec {
+        name = "webcat";
         builder = "${bash}/bin/bash";
         args = [ ./nix-builder.sh ];
         inherit coreutils openssl libyaml;
@@ -23,7 +23,7 @@ let
 
 in
 pkgs.dockerTools.buildImage {
-    name = "equill/sebcat";
+    name = "equill/webcat";
     tag = "0.6.3";
     created = "now";
 
@@ -34,7 +34,7 @@ pkgs.dockerTools.buildImage {
         sha256 = "1grjbzw5859mygmv9mgrnmmkaa2605il0968i5ss5n4nwc8n5s0x";
     };
     contents = [
-        sebcat_deriv
+        webcat_deriv
         bash
         coreutils
         file

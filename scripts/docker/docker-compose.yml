@@ -8,14 +8,14 @@ services:
       - "7677:7474"
       - "7690:7687"
     volumes:
-      - /home/james/data/sebcat/data:/data
+      - /home/james/data/webcat/data:/data
     networks:
-      - sebcatnet
+      - webcatnet
     environment:
       NEO4J_AUTH: "neo4j/wallaby"
       NEO4J_dbms_jvm_additional: "-Dfile.encoding=UTF-16"
   restagraph:
-    image: equill/sebcat:0.6.3
+    image: equill/webcat:0.6.3
     depends_on:
       - neo4j
     deploy:
@@ -23,9 +23,9 @@ services:
     ports:
       - "4955:4949"
     volumes:
-      - /home/james/data/sebcat/files:/files
+      - /home/james/data/webcat/files:/files
     networks:
-      - sebcatnet
+      - webcatnet
     environment:
       # This app
       LISTEN_ADDR: "0.0.0.0"
@@ -51,14 +51,14 @@ services:
 #    ports:
 #      - "4000:4000"
 #    networks:
-#      - sebcatnet
+#      - webcatnet
 #    environment:
 #      NEO4J_SERVER: "neo4j:7687"
 #      NEO4J_USER: "neo4j"
 #      NEO4J_PASSWD: "wallaby"
 #      RG_SERVER: "http://restagraph:4949"
 networks:
-  sebcatnet:
+  webcatnet:
 volumes:
-  sebcat_files:
+  webcat_files:
     external: true
