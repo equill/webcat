@@ -1,0 +1,28 @@
+name: stories
+version: 1
+
+resourcetypes:
+  stories:
+    dependent: 'false'
+    notes: Any kind of story.
+  characters:
+    dependent: 'false'
+  books:
+    dependent: 'false'
+  movies:
+    dependent: 'false'
+    attributes:
+      imdbIndex:
+
+relationships:
+- uri: /stories/Aka/aliases
+- uri: /characters/Aka/aliases
+- uri: /stories/Characters/characters
+- uri: /books/BasedOn/stories
+- uri: /books/Characters/characters
+- uri: /books/AlsoPublishedAs/aliases
+- uri: /movies/BasedOn/stories
+- uri: /movies/BasedOn/books
+- uri: /books/BasedOn/movies
+- uri: /movies/Characters/characters
+- uri: /movies/AlsoPublishedAs/aliases

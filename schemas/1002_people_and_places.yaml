@@ -7,6 +7,9 @@ resourcetypes:
     notes: The generic idea of a specific place, independent of its geographical location. E.g, an office or somebody's home.
     attributes:
       description:
+  aliases:
+    dependent: 'true'
+    notes: Another name by which someone or something is known.
 
 relationships:
 - uri: /places/Locations/streetNumbers
@@ -31,3 +34,18 @@ relationships:
   cardinality: many:many
 - uri: /people/WantToVisit/places
   cardinality: many:many
+- uri: /people/Friend/people
+- uri: /people/RelatedTo/people
+- uri: /people/Partner/people
+- uri: /people/MarriedTo/people
+- uri: /people/ParentOf/people
+  cardinality: 1:many
+- uri: /people/ChildOf/people
+  cardinality: 1:many
+- uri: /people/Sibling/people
+- uri: /people/Cousin/people
+- uri: /people/AuntOf/people
+- uri: /people/UncleOf/people
+- uri: /people/NeiceOf/people
+- uri: /people/NephewOf/people
+- uri: /people/Aka/aliases
