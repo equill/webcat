@@ -24,7 +24,7 @@ let
 in
 pkgs.dockerTools.buildImage {
     name = "equill/webcat";
-    tag = "0.6.3";
+    tag = "0.6.4";
     created = "now";
 
     fromImage = pkgs.dockerTools.pullImage {

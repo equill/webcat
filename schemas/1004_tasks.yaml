@@ -7,7 +7,7 @@ resourcetypes:
     attributes:
       status:
         description: "Task status."
-        vals: "Idea,Active,Cancelled,Done,Tracked_elsewhere"
+        vals: "Idea,Active,WaitingOnExternal,Cancelled,Done,Tracked_elsewhere"
       scheduled:
         description: "A date/time."
       description:
