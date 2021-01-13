@@ -44,6 +44,10 @@ relationships:
 - uri: /tasks/ImplementedAs/tasks
   cardinality: many:many
   notes: "For distinguishing a functional spec/customer request from the details of how it's to be actually done."
+- uri: /tasks/Supersedes/tasks
+  cardinality: many:many
+- uri: /tasks/SupersededBy/tasks
+  cardinality: many:many
 - uri: /tasks/RelatesTo/pursuits
   cardinality: many:many
   notes: Grouping/summarising tasks under pursuits
