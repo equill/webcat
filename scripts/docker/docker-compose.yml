@@ -42,7 +42,7 @@ services:
       # Uncomment the following line to enable debug-logging
       #DEBUG: "true"
   clwebcat:
-    image: equill/clwebcat:0.0.1
+    image: equill/clwebcat:0.0.5
     deploy:
       replicas: 1
     ports:
