@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
 
     shellHook = "export PS1='\n\\[\\033[01;32m\\][nix sebcat] \\w\\$\\[\\033[00m\\] '";
 
-    LD_LIBRARY_PATH = stdenv.lib.makeLibraryPath [
+    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
         pkgs.openssl
         pkgs.libyaml
     ];
