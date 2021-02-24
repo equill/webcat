@@ -23,6 +23,10 @@ resourcetypes:
       urgency:
         description: How soon it needs to be done.
         vals: "high,medium,low"
+      currentstate:
+        description: Where it´s at right now.
+      nextactions:
+        description: What needs to happen next.
   pursuits:
     notes: "Ongoing pursuits under which tasks might be grouped, e.g. Yoga, software development or rock-climbing."
     attributes:
